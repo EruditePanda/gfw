@@ -128,7 +128,7 @@ export const getGeostore = createThunkAction(
 export const getCountryWhitelist = createThunkAction(
   'getCountryWhitelist',
   country => (dispatch, state) => {
-    if (!state().countryData.isRegionWhitelistLoading) {
+    if (!state().countryData.isCountryWhitelistLoading) {
       dispatch(setCountryWhitelistLoading(true));
       getCountryWhitelistProvider(country)
         .then(response => {
