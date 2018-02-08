@@ -15,6 +15,7 @@ const mapStateToProps = ({ widgetPrimaryTreeCover, countryData }, ownProps) => {
   const {
     isCountriesLoading,
     isRegionsLoading,
+    isCountryWhitelistLoading,
     countryWhitelist,
     regions
   } = countryData;
@@ -30,7 +31,11 @@ const mapStateToProps = ({ widgetPrimaryTreeCover, countryData }, ownProps) => {
   };
 
   return {
-    loading: loading || isCountriesLoading || isRegionsLoading,
+    loading:
+      loading ||
+      isCountriesLoading ||
+      isRegionsLoading ||
+      isCountryWhitelistLoading,
     regions,
     data,
     parsedData: getPrimaryTreeCoverData(selectorData),
